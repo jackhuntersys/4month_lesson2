@@ -1,0 +1,1 @@
+## Bu yerda malumot buladi
