@@ -24,7 +24,7 @@ class DataTransformation:
       
         try:
             num_columns = ["Age"]
-            cat_columns = ["Gender","Nationality", "Food", "Juice"]
+            cat_columns = ["Gender","Nationality", "Food", "Juice"]        #! BU YERNI AUTO SELECT QILADIGAN QILISH KERAK
             drop_columns = ["Timestap", "Participant_ID"]
 
             num_pipeline= Pipeline(
@@ -67,7 +67,7 @@ class DataTransformation:
         
           # ! SHU YERDA QOLGAN. PASDAGI KODLARNI KURISH KERAK
 
-    def initiate_data_transformation(self,train_path,test_path):
+    def initiate_data_transformation(self,train_path,test_path):   
 
         try:
             train_df=pd.read_csv(train_path)
@@ -79,8 +79,8 @@ class DataTransformation:
 
             preprocessing_obj=self.get_data_transformer_object()
 
-            target_column_name="math_score"
-            numerical_columns = ["writing_score", "reading_score"]
+            target_column_name="Dessert"
+            # numerical_columns = ["Age"]       # ! BU UZGARUVCHI ISHLATILMAGAN
 
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df=train_df[target_column_name]
